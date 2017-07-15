@@ -79,18 +79,25 @@ button.addEventListener("click", function(){
 	//let testThis = checkHappy(squareAndAdd(splitValues(testThisNumber)))
 })
 
-let buttons = document.getElementById("btn-checkvalues");
-let testThisNumbers;
+var buttons = document.getElementById("btn-checkvalues");
+var testThisNumbers;
 buttons.addEventListener("click", function(){
-	testThisNumbers = document.getElementById("numberVal").value;
-
+	testThisNumbers = document.getElementById("numberVal").value ;
+	a();
 	
-	let testThiss = splitValues(testThisNumbers);
-	testThiss = squareAndAdd(testThiss);
-	testThiss = checkHappys(testThiss);
+}
+	
+	
 	//let testThis = checkHappy(squareAndAdd(splitValues(testThisNumber)))
-})
-
+)
+function a() {
+for (var j = 0; j < testThisNumbers; j++) {
+	checkHappys(j);
+	if(checkHappys(j)===true) {
+		document.getElementById("p").innerHTML += j +" " ;
+	}
+	}
+}
 for (var i = 0; i < 1001; i++) {
 	checkHappys(i);
 	if(checkHappys(i)===true) {
